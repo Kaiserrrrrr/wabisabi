@@ -3,198 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>wabisabi.css</title>
-    <link rel="stylesheet" href="./dist/wabisabi.css">
-</head>
+    <title>Google Ecosystem Semantic Demo</title>
+    <link rel="stylesheet" href="style.css"> </head>
 <body>
 
     <header>
-        <hgroup>
-            <h1>wabisabi</h1>
-            <p>A classless, semantic take on CSS</p>
-        </hgroup>
+        <h1>Material 3.5 Semantic UI</h1>
+        <p>A full-spectrum demonstration of 2026 fluid typography, logical properties, and total HTML5 element coverage.</p>
         <nav>
             <menu>
-                <li><a href="#typography">Typography</a></li>
-                <li><a href="#forms">Forms</a></li>
-                <li><a href="#interactive">Interactive</a></li>
+                <button type="button">Dashboard</button>
+                <button type="button">Settings</button>
+                <button type="button" disabled>Admin Only</button>
             </menu>
         </nav>
     </header>
 
     <main>
-        <section id="typography">
-            <header>
-                <h2>1. Text & Content</h2>
-            </header>
-            
-            <article>
-                <h3>Hierarchy & Formatting</h3>
-                <p>Standard paragraph with <strong>strong text</strong>, <b>bold text</b>, <em>emphasized text</em>, and <i>italics</i>. We can also use <u>underlined text</u>, <s>strikethrough</s>, or <mark>highlighted sections</mark>.</p>
-                
-                <p>Testing <small>small text</small>, <del>deleted text</del>, and <ins>inserted text</ins>. Here is a subscript: H<sub>2</sub>O and a superscript: E=mc<sup>2</sup>.</p>
-
-                <blockquote>
-                    "The best way to predict the future is to invent it."
-                    <cite>— Alan Kay</cite>
-                </blockquote>
-
-                <p>Technical tags: Use <kbd>Ctrl</kbd> + <kbd>S</kbd> to save. The result is a <var>x</var> = <samp>Success</samp> message. Our <data value="100">one hundred</data> units are tracked via <time datetime="2026-01-28">January 2026</time>.</p>
-                
-                <p>Abbreviations like <abbr title="Accessibility">A11y</abbr> and definitions like <dfn>Semantic CSS</dfn> are crucial.</p>
-                
-                <p>Ruby annotations (for CJK text): <ruby>漢 <rt>かん</rt> 字 <rt>じ</rt></ruby></p>
-            </article>
-
-            <aside>
-                <h4>Side Note</h4>
-                <p>This is an <code>&lt;aside&gt;</code> element, used for tangentially related content.</p>
-            </aside>
-
-            <hr>
-
-            <h3>Lists & Descriptions</h3>
-            <dl>
-                <dt>Coffee</dt>
-                <dd>Black hot drink</dd>
-                <dt>Milk</dt>
-                <dd>White cold drink</dd>
-            </dl>
-
-            <ul>
-                <li>Unordered list item 1</li>
-                <li>Unordered list item 2</li>
-            </ul>
-
-            <ol>
-                <li>Ordered list item 1</li>
-                <li>Ordered list item 2</li>
-            </ol>
+        <section>
+            <h2>Interactive Feedback</h2>
+            <p>Elements using <code>aria-busy="true"</code> automatically trigger the Google-style pulse loader.</p>
+            <div aria-busy="true" style="height: 100px; margin-bottom: 1rem;">
+                This content is loading...
+            </div>
+            <button aria-busy="true">Loading Action</button>
         </section>
 
-        <section id="forms">
-            <h2>2. Forms & Inputs</h2>
-            <form action="#">
+        <article>
+            <h2>Typography & Text Semantics</h2>
+            <p>This paragraph contains <mark>marked text</mark>, <u>underlined text</u>, <strong>strong importance</strong>, and <em>emphasized stress</em>. We also support <abbr title="HyperText Markup Language">HTML</abbr> abbreviations and <q>inline quotations</q>.</p>
+            
+            <p>Technical content: <kbd>Ctrl</kbd> + <kbd>C</kbd> to copy. The variable <var>x</var> equals the <samp>output of the terminal</samp>. <code>function()</code> is a code snippet.</p>
+            
+            <blockquote>
+                "Design is not just what it looks like and feels like. Design is how it works."
+                <cite>— Steve Jobs</cite>
+            </blockquote>
+
+            <p>Internationalization: <ruby>漢 <rt>かん</rt> 字 <rt>じ</rt></ruby> (Ruby characters) and <bdi>Isolate Directional Text</bdi>.</p>
+        </article>
+
+        <section>
+            <h2>Accessible Inputs</h2>
+            <form action="#" method="post">
                 <fieldset>
-                    <legend>Personal Details</legend>
-                    <label for="fname">First Name:</label>
-                    <input type="text" id="fname" placeholder="Enter name..." required>
+                    <legend>User Information</legend>
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" placeholder="Google User" required>
                     
-                    <label for="bday">Birthday:</label>
-                    <input type="date" id="bday">
-                </fieldset>
+                    <label for="color">Favorite Theme Color</label>
+                    <input type="color" id="color" value="#0b57d0">
 
-                <fieldset>
-                    <legend>Selections</legend>
-                    <label for="opts">Choose a browser:</label>
-                    <input list="browsers" id="opts">
-                    <datalist id="browsers">
-                        <option value="Chrome">
-                        <option value="Firefox">
-                        <option value="Safari">
-                    </datalist>
+                    <label for="range">Volume Setting</label>
+                    <input type="range" id="range" min="0" max="100">
 
-                    <label for="subjects">Subject:</label>
-                    <select id="subjects">
-                        <optgroup label="Tech">
-                            <option value="css">CSS</option>
-                            <option value="html">HTML</option>
-                        </optgroup>
+                    <label for="choices">Framework Choice</label>
+                    <select id="choices">
+                        <option value="m3">Material 3.5</option>
+                        <option value="native">Native Browser</option>
                     </select>
 
-                    <label for="feedback">Feedback:</label>
-                    <textarea id="feedback" rows="4"></textarea>
+                    <label for="msg">Message</label>
+                    <textarea id="msg" rows="3" placeholder="Type a message..."></textarea>
                 </fieldset>
 
-                <p>
-                    <button type="submit">Submit</button>
-                    <button type="button">Action Button</button>
-                    <output name="result">Output: 100</output>
-                </p>
+                <fieldset>
+                    <legend>System Status</legend>
+                    <label>Storage Used (Meter)</label>
+                    <meter min="0" max="100" low="30" high="80" optimum="20" value="75"></meter>
+                    
+                    <label>Upload Progress (Progress Bar)</label>
+                    <progress value="45" max="100"></progress>
+                </fieldset>
 
-                <p>
-                    <label>Task Progress:</label>
-                    <progress value="75" max="100"></progress>
-                    <meter value="0.6" min="0" max="1">60%</meter>
-                </p>
+                <menu>
+                    <button type="submit">Submit Product Data</button>
+                    <button type="reset">Clear Form</button>
+                </menu>
             </form>
         </section>
 
         <section>
-            <search>
-                <form>
-                    <label for="site-search">Search the site:</label>
-                    <input type="search" id="site-search" name="q">
-                    <button>Search</button>
-                </form>
-            </search>
-        </section>
-
-        <section id="media">
-            <h2>3. Media & Tables</h2>
-            
-            <figure>
-                <picture>
-                    <source srcset="https://via.placeholder.com/600x300" media="(min-width: 600px)">
-                    <img src="https://via.placeholder.com/400x200" alt="Demo Image">
-                </picture>
-                <figcaption>A responsive <code>&lt;picture&gt;</code> element inside a <code>&lt;figure&gt;</code>.</figcaption>
-            </figure>
-
+            <h2>Complex Data</h2>
             <table>
-                <caption>Project Timeline</caption>
-                <colgroup>
-                    <col style="background-color: var(--md-surface-variant)">
-                    <col span="2">
-                </colgroup>
+                <caption>Weekly Usage Metrics</caption>
                 <thead>
                     <tr>
-                        <th>Phase</th>
-                        <th>Status</th>
-                        <th>Deadline</th>
+                        <th>Feature</th>
+                        <th>User Engagement</th>
+                        <th>Latency</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Design</td>
-                        <td>Done</td>
-                        <td>Dec 2025</td>
+                        <td>Semantic Logic</td>
+                        <td>High</td>
+                        <td><time datetime="PT0.2S">0.2s</time></td>
                     </tr>
                     <tr>
-                        <td>Development</td>
-                        <td>Active</td>
-                        <td>Jan 2026</td>
+                        <td>Fluid Clamping</td>
+                        <td>Moderate</td>
+                        <td><time datetime="PT0.5S">0.5s</time></td>
                     </tr>
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td colspan="3">Total duration: 2 months</td>
+                        <td colspan="2">System Overall</td>
+                        <td>Optimal</td>
                     </tr>
                 </tfoot>
             </table>
 
-            <video controls width="100%">
-                <source src="#" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </section>
-
-        <section id="interactive">
-            <h2>4. Interactive Elements</h2>
             <details>
-                <summary>Click to reveal more information</summary>
-                <p>This content is hidden by default but revealed when the <code>&lt;details&gt;</code> element is toggled.</p>
+                <summary>View Technical Specifications</summary>
+                <ul>
+                    <li>Logical Properties: <code>margin-inline</code>, <code>padding-block</code></li>
+                    <li>WCAG Compliance: 2.2 Level AAA</li>
+                    <li>Viewport: Fluid <code>clamp()</code> scaling</li>
+                </ul>
             </details>
-
-            <p>Example of a Code block:</p>
-            <pre><code>function hello() {
-  console.log("Hello, World!");
-}</code></pre>
         </section>
+
+        <section>
+            <h2>Media & Graphics</h2>
+            <figure>
+                <div style="background: var(--m3-primary-container); height: 200px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center;">
+                    <span style="color: var(--m3-on-primary-container)">Placeholder for &lt;img&gt; or &lt;canvas&gt;</span>
+                </div>
+                <figcaption>Figure 1: The Google Material 3 color harmony in action.</figcaption>
+            </figure>
+            
+            <p>Supporting <small>Copyright &copy; 2026</small> and <sub>Subscript</sub>/<sup>Superscript</sup> content.</p>
+        </article>
     </main>
 
     <footer>
-        <p><small>&copy; 2026. This page uses 100% valid HTML5.</small></p>
+        <p>Built with 100% Native Semantic HTML5.</p>
+        <address>
+            Google Design Labs<br>
+            Mountain View, CA
+        </address>
     </footer>
 
 </body>
