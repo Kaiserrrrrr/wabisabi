@@ -1,12 +1,4 @@
-/**
- * 2026 TOTAL FLUID SEMANTIC FRAMEWORK
- * Design: Material 3.5 "Liquid" Ecosystem
- * Technique: Full Interpolation via clamp()
- * Coverage: 100% Non-Deprecated HTML Elements
- */
-
-:root {
-	/* Google M3 Tonal Palette */
+:root {				
 	--m3-primary: #0b57d0;
 	--m3-on-primary: #ffffff;
 	--m3-primary-container: #d3e3fd;
@@ -17,23 +9,13 @@
 	--m3-on-surface-variant: #444746;
 	--m3-outline: #747775;
 	--m3-outline-variant: #c4c7c5;
-
-	/* --- FLUID GEOMETRY (The 2026 Standard) --- */
-	/* Fluid Typography: 16px -> 18px */
 	--base-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
-
-	/* Fluid Containers: 16px -> 40px padding */
 	--fluid-gap: clamp(1rem, 5vi, 2.5rem);
-
-	/* Fluid Headings */
 	--h1-size: clamp(2.25rem, 8vi, 3.5rem);
 	--h2-size: clamp(1.5rem, 5vi, 2.25rem);
-
-	/* Modern Radii */
 	--radius-lg: 28px;
 	--radius-md: 12px;
 	--radius-pill: 1000px;
-
 	--font-sans: "Inter", system-ui, -apple-system, sans-serif;
 	--font-mono: "Roboto Mono", monospace;
 	--easing: cubic-bezier(0.2, 0, 0, 1);
@@ -51,7 +33,6 @@
 	}
 }
 
-/* --- 1. GLOBAL FLUIDITY & A11Y --- */
 html {
 	font-family: var(--font-sans);
 	font-size: var(--base-size);
@@ -63,9 +44,7 @@ html {
 	box-sizing: border-box;
 }
 
-*,
-*::before,
-*::after {
+*, *::before, *::after {
 	box-sizing: inherit;
 }
 
@@ -73,7 +52,6 @@ body {
 	max-width: 900px;
 	margin-inline: auto;
 	padding: var(--fluid-gap);
-	/* Uses Clamped Padding */
 	overflow-wrap: break-word;
 }
 
@@ -82,28 +60,13 @@ body {
 	outline-offset: 4px;
 }
 
-/* --- 2. STRUCTURAL ELEMENTS (Total Coverage) --- */
-header,
-footer,
-main,
-section,
-article,
-aside,
-nav,
-hgroup,
-search,
-figure,
-details,
-dialog {
+
+header, footer, main, section, article, aside, nav, hgroup, search, figure, details, dialog {
 	display: block;
 	margin-block-end: var(--fluid-gap);
 }
 
-/* Clamped Responsive Containers */
-article,
-section,
-fieldset,
-dialog {
+article, section, fieldset, dialog {
 	background: var(--m3-surface-container);
 	padding: var(--fluid-gap);
 	border-radius: var(--radius-lg);
@@ -116,7 +79,6 @@ hr {
 	margin-block: var(--fluid-gap);
 }
 
-/* --- 3. FLUID TYPOGRAPHY --- */
 h1 {
 	font-size: var(--h1-size);
 	font-weight: 400;
@@ -137,18 +99,12 @@ h3 {
 	font-weight: 500;
 }
 
-h4,
-h5,
-h6 {
+h4, h5, h6 {
 	font-weight: 600;
 	font-size: 1rem;
 }
 
-p,
-ul,
-ol,
-dl,
-address {
+p, ul, ol, dl, address {
 	margin-block-end: 1.5rem;
 }
 
@@ -174,18 +130,11 @@ blockquote {
 	font-style: italic;
 }
 
-/* All Small Semantic Tags */
-strong,
-b {
+strong, b {
 	font-weight: 700;
 }
 
-em,
-i,
-cite,
-dfn,
-var,
-address {
+em, i, cite, dfn, var, address {
 	font-style: italic;
 }
 
@@ -193,8 +142,7 @@ small {
 	font-size: 0.85em;
 }
 
-sub,
-sup {
+sub, sup {
 	font-size: 0.7em;
 	line-height: 0;
 	position: relative;
@@ -221,13 +169,11 @@ mark {
 	border-radius: 2px;
 }
 
-ins,
-u {
+ins, u {
 	text-decoration: underline;
 }
 
-del,
-s {
+del, s {
 	text-decoration: line-through;
 	opacity: 0.6;
 }
@@ -240,19 +186,13 @@ q::after {
 	content: close-quote;
 }
 
-/* Code Elements */
-code,
-kbd,
-samp,
-pre {
+code, kbd, samp, pre {
 	font-family: var(--font-mono);
 	font-size: 0.9em;
 	background: var(--m3-surface);
 }
 
-code,
-kbd,
-samp {
+code, kbd, samp {
 	padding: 0.2em 0.4em;
 	border: 1px solid var(--m3-outline-variant);
 	border-radius: 4px;
@@ -266,26 +206,16 @@ pre {
 	border: 1px solid var(--m3-outline-variant);
 }
 
-/* --- 4. FORM & ACTION (48px Touch Targets) --- */
-button,
-input,
-select,
-textarea,
-output,
-datalist {
+button, input, select, textarea, output, datalist {
 	font-family: inherit;
 	font-size: 1rem;
 }
 
-button,
-input[type="button"],
-input[type="submit"],
-input[type="reset"] {
+button, input[type="button"], input[type="submit"], input[type="reset"] {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
 	min-block-size: 48px;
-	/* Accessible standard */
 	padding-inline: 2rem;
 	border-radius: var(--radius-pill);
 	border: 1px solid var(--m3-outline);
@@ -312,9 +242,7 @@ button:disabled {
 	filter: grayscale(1);
 }
 
-input:not([type="button"]):not([type="submit"]):not([type="reset"]),
-select,
-textarea {
+input:not([type="button"]):not([type="submit"]):not([type="reset"]), select, textarea {
 	display: block;
 	width: 100%;
 	min-block-size: 48px;
@@ -325,17 +253,14 @@ textarea {
 	color: var(--m3-on-surface);
 }
 
-label,
-legend {
+label, legend {
 	display: block;
 	font-weight: 500;
 	margin-block-end: 0.5rem;
 	font-size: 0.9em;
 }
 
-/* Progress & Meter */
-progress,
-meter {
+progress, meter {
 	width: 100%;
 	block-size: 10px;
 	accent-color: var(--m3-primary);
@@ -344,15 +269,13 @@ meter {
 	background: var(--m3-outline-variant);
 }
 
-/* --- 5. DATA & MEDIA --- */
 table {
 	width: 100%;
 	border-collapse: collapse;
 	margin-block: var(--fluid-gap);
 }
 
-th,
-td {
+th, td {
 	padding: 1rem;
 	border-block-end: 1px solid var(--m3-outline-variant);
 	text-align: start;
@@ -364,12 +287,7 @@ th {
 	font-weight: 600;
 }
 
-img,
-video,
-canvas,
-iframe,
-picture,
-object {
+img, video, canvas, iframe, picture, object {
 	max-width: 100%;
 	height: auto;
 	border-radius: var(--radius-md);
@@ -384,7 +302,6 @@ figcaption {
 	margin-block-start: 0.5rem;
 }
 
-/* --- 6. SKELETON & STATES --- */
 @keyframes shimmer {
 	0% {
 		opacity: 0.5;
@@ -406,7 +323,6 @@ figcaption {
 	animation: shimmer 1.5s infinite ease-in-out !important;
 }
 
-/* Summary / Details Styling */
 summary {
 	font-weight: 600;
 	cursor: pointer;
