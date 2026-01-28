@@ -1,0 +1,267 @@
+/**
+ * 2026 SEMANTIC CSS LIBRARY
+ * Design System: Google Material 3 (M3)
+ * Typography: Inter / System Font Stack
+ * Strategy: Classless, Responsive, Ultra-High Performance
+ */
+
+:root {
+  /* Material 3 Light Tokens */
+  --md-primary: #0061a4;
+  --md-on-primary: #ffffff;
+  --md-surface: #fdfcff;
+  --md-on-surface: #1a1c1e;
+  --md-outline: #74777f;
+  --md-surface-variant: #e0e2ec;
+  --md-on-surface-variant: #44474e;
+  --md-secondary-container: #d1e4ff;
+  --md-on-secondary-container: #001d36;
+
+  /* Typography Stack */
+  --font-sans: "Inter", "Inter var", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Code", "SFMono-Regular", Menlo, Monaco, Consolas, monospace;
+  
+  /* Fluid Scale: 16px on mobile -> 20px on desktop */
+  --base-size: clamp(1rem, 0.92rem + 0.39vw, 1.25rem);
+  --line-height: 1.6;
+  --radius: 12px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --md-primary: #d1e4ff;
+    --md-on-primary: #003258;
+    --md-surface: #1a1c1e;
+    --md-on-surface: #e2e2e6;
+    --md-outline: #8e9199;
+    --md-surface-variant: #44474e;
+    --md-on-surface-variant: #c4c6d0;
+    --md-secondary-container: #00497d;
+    --md-on-secondary-container: #d1e4ff;
+  }
+}
+
+/* --- 1. Global Reset & Accessibility --- */
+html {
+  font-family: var(--font-sans);
+  font-size: var(--base-size);
+  line-height: var(--line-height);
+  background-color: var(--md-surface);
+  color: var(--md-on-surface);
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+*, *::before, *::after { box-sizing: inherit; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  max-width: 75ch; /* Optimal character count per line */
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+  overflow-wrap: break-word;
+}
+
+:focus-visible {
+  outline: 3px solid var(--md-primary);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 4px var(--md-surface);
+}
+
+/* --- 2. Structural & Sectioning --- */
+header, footer, main, section, article, aside, nav, hgroup {
+  display: block;
+  margin-bottom: 2rem;
+}
+
+header { border-bottom: 1px solid var(--md-outline); padding-bottom: 1rem; }
+footer { border-top: 1px solid var(--md-outline); padding-top: 2rem; font-size: 0.9em; opacity: 0.8; }
+
+/* --- 3. Typography Hierarchy --- */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 800;
+  color: var(--md-on-surface);
+}
+
+h1 { font-size: 2.5em; letter-spacing: -0.03em; }
+h2 { font-size: 2em; }
+h3 { font-size: 1.5em; }
+
+p, ul, ol, dl, address, blockquote { margin-bottom: 1.5rem; }
+
+a {
+  color: var(--md-primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.2s ease;
+}
+
+a:hover { opacity: 0.7; text-decoration: none; }
+
+blockquote {
+  margin-inline: 0;
+  padding: 1rem 1.5rem;
+  background: var(--md-surface-variant);
+  border-left: 6px solid var(--md-primary);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-style: italic;
+}
+
+cite { font-size: 0.9em; opacity: 0.8; }
+
+/* --- 4. Text-level Semantics --- */
+code, kbd, samp, pre, var {
+  font-family: var(--font-mono);
+  background: var(--md-surface-variant);
+  border-radius: 6px;
+  font-size: 0.9em;
+}
+
+code, kbd, samp { padding: 0.2rem 0.4rem; }
+
+pre {
+  padding: 1.5rem;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  margin-bottom: 1.5rem;
+}
+
+abbr[title] { text-decoration: underline dotted; cursor: help; }
+mark { background: var(--md-secondary-container); color: var(--md-on-secondary-container); padding: 0 0.2em; }
+small { font-size: 0.8em; }
+sub, sup { font-size: 0.7em; position: relative; line-height: 0; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+/* --- 5. Lists & Data --- */
+ul, ol { padding-inline-start: 2rem; }
+li { margin-bottom: 0.5rem; }
+dt { font-weight: 700; margin-top: 1rem; }
+dd { margin-inline-start: 1.5rem; margin-bottom: 0.5rem; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+  font-variant-numeric: tabular-nums;
+}
+
+th, td {
+  padding: 0.8rem;
+  text-align: left;
+  border-bottom: 1px solid var(--md-outline);
+}
+
+th { background: var(--md-surface-variant); font-weight: 700; }
+caption { margin-bottom: 0.5rem; font-weight: 600; font-size: 0.9em; }
+
+/* --- 6. Forms & Interactive (Touch-Target Optimized) --- */
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  min-height: 44px; /* WCAG 2.2 Target Size */
+  border: 1px solid var(--md-outline);
+  border-radius: var(--radius);
+  background: var(--md-surface);
+  color: var(--md-on-surface);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+button, input[type="submit"], input[type="button"] {
+  background: var(--md-primary);
+  color: var(--md-on-primary);
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  padding-inline: 1.5rem;
+}
+
+button:hover { filter: brightness(1.1); }
+button:active { filter: brightness(0.9); }
+
+label { display: block; font-weight: 600; margin-bottom: 0.5rem; }
+
+fieldset {
+  border: 1px solid var(--md-outline);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+legend { padding-inline: 0.5rem; font-weight: 700; }
+
+textarea { width: 100%; min-height: 120px; resize: vertical; }
+
+progress, meter {
+  width: 100%;
+  height: 12px;
+  accent-color: var(--md-primary);
+}
+
+/* --- 7. Media Elements --- */
+img, video, canvas, iframe, picture, object, embed {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+figure { margin: 2rem 0; }
+figcaption { font-size: 0.85em; text-align: center; margin-top: 0.5rem; opacity: 0.8; }
+
+/* --- 8. Interactive & UI Details --- */
+details {
+  background: var(--md-surface-variant);
+  border-radius: var(--radius);
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+}
+
+summary {
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  outline: none;
+}
+
+dialog {
+  border: none;
+  border-radius: var(--radius);
+  padding: 2rem;
+  background: var(--md-surface);
+  color: var(--md-on-surface);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+dialog::backdrop {
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(4px);
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--md-outline);
+  margin: 3rem 0;
+}
+
+/* --- 9. Mobile Responsiveness Overrides --- */
+@media (max-width: 600px) {
+  body { padding: 1rem; }
+  h1 { font-size: 2rem; }
+  table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+
+[hidden] { display: none !important; }
