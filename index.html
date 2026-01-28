@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wabisabi.css</title>
+    <link rel="stylesheet" href="./dist/wabisabi.css">
+</head>
+<body>
+
+    <header>
+        <hgroup>
+            <h1>wabisabi</h1>
+            <p>A classless, semantic take on CSS</p>
+        </hgroup>
+        <nav>
+            <menu>
+                <li><a href="#typography">Typography</a></li>
+                <li><a href="#forms">Forms</a></li>
+                <li><a href="#interactive">Interactive</a></li>
+            </menu>
+        </nav>
+    </header>
+
+    <main>
+        <section id="typography">
+            <header>
+                <h2>1. Text & Content</h2>
+            </header>
+            
+            <article>
+                <h3>Hierarchy & Formatting</h3>
+                <p>Standard paragraph with <strong>strong text</strong>, <b>bold text</b>, <em>emphasized text</em>, and <i>italics</i>. We can also use <u>underlined text</u>, <s>strikethrough</s>, or <mark>highlighted sections</mark>.</p>
+                
+                <p>Testing <small>small text</small>, <del>deleted text</del>, and <ins>inserted text</ins>. Here is a subscript: H<sub>2</sub>O and a superscript: E=mc<sup>2</sup>.</p>
+
+                <blockquote>
+                    "The best way to predict the future is to invent it."
+                    <cite>— Alan Kay</cite>
+                </blockquote>
+
+                <p>Technical tags: Use <kbd>Ctrl</kbd> + <kbd>S</kbd> to save. The result is a <var>x</var> = <samp>Success</samp> message. Our <data value="100">one hundred</data> units are tracked via <time datetime="2026-01-28">January 2026</time>.</p>
+                
+                <p>Abbreviations like <abbr title="Accessibility">A11y</abbr> and definitions like <dfn>Semantic CSS</dfn> are crucial.</p>
+                
+                <p>Ruby annotations (for CJK text): <ruby>漢 <rt>かん</rt> 字 <rt>じ</rt></ruby></p>
+            </article>
+
+            <aside>
+                <h4>Side Note</h4>
+                <p>This is an <code>&lt;aside&gt;</code> element, used for tangentially related content.</p>
+            </aside>
+
+            <hr>
+
+            <h3>Lists & Descriptions</h3>
+            <dl>
+                <dt>Coffee</dt>
+                <dd>Black hot drink</dd>
+                <dt>Milk</dt>
+                <dd>White cold drink</dd>
+            </dl>
+
+            <ul>
+                <li>Unordered list item 1</li>
+                <li>Unordered list item 2</li>
+            </ul>
+
+            <ol>
+                <li>Ordered list item 1</li>
+                <li>Ordered list item 2</li>
+            </ol>
+        </section>
+
+        <section id="forms">
+            <h2>2. Forms & Inputs</h2>
+            <form action="#">
+                <fieldset>
+                    <legend>Personal Details</legend>
+                    <label for="fname">First Name:</label>
+                    <input type="text" id="fname" placeholder="Enter name..." required>
+                    
+                    <label for="bday">Birthday:</label>
+                    <input type="date" id="bday">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Selections</legend>
+                    <label for="opts">Choose a browser:</label>
+                    <input list="browsers" id="opts">
+                    <datalist id="browsers">
+                        <option value="Chrome">
+                        <option value="Firefox">
+                        <option value="Safari">
+                    </datalist>
+
+                    <label for="subjects">Subject:</label>
+                    <select id="subjects">
+                        <optgroup label="Tech">
+                            <option value="css">CSS</option>
+                            <option value="html">HTML</option>
+                        </optgroup>
+                    </select>
+
+                    <label for="feedback">Feedback:</label>
+                    <textarea id="feedback" rows="4"></textarea>
+                </fieldset>
+
+                <p>
+                    <button type="submit">Submit</button>
+                    <button type="button">Action Button</button>
+                    <output name="result">Output: 100</output>
+                </p>
+
+                <p>
+                    <label>Task Progress:</label>
+                    <progress value="75" max="100"></progress>
+                    <meter value="0.6" min="0" max="1">60%</meter>
+                </p>
+            </form>
+        </section>
+
+        <section>
+            <search>
+                <form>
+                    <label for="site-search">Search the site:</label>
+                    <input type="search" id="site-search" name="q">
+                    <button>Search</button>
+                </form>
+            </search>
+        </section>
+
+        <section id="media">
+            <h2>3. Media & Tables</h2>
+            
+            <figure>
+                <picture>
+                    <source srcset="https://via.placeholder.com/600x300" media="(min-width: 600px)">
+                    <img src="https://via.placeholder.com/400x200" alt="Demo Image">
+                </picture>
+                <figcaption>A responsive <code>&lt;picture&gt;</code> element inside a <code>&lt;figure&gt;</code>.</figcaption>
+            </figure>
+
+            <table>
+                <caption>Project Timeline</caption>
+                <colgroup>
+                    <col style="background-color: var(--md-surface-variant)">
+                    <col span="2">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>Phase</th>
+                        <th>Status</th>
+                        <th>Deadline</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Design</td>
+                        <td>Done</td>
+                        <td>Dec 2025</td>
+                    </tr>
+                    <tr>
+                        <td>Development</td>
+                        <td>Active</td>
+                        <td>Jan 2026</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3">Total duration: 2 months</td>
+                    </tr>
+                </tfoot>
+            </table>
+
+            <video controls width="100%">
+                <source src="#" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+
+        <section id="interactive">
+            <h2>4. Interactive Elements</h2>
+            <details>
+                <summary>Click to reveal more information</summary>
+                <p>This content is hidden by default but revealed when the <code>&lt;details&gt;</code> element is toggled.</p>
+            </details>
+
+            <p>Example of a Code block:</p>
+            <pre><code>function hello() {
+  console.log("Hello, World!");
+}</code></pre>
+        </section>
+    </main>
+
+    <footer>
+        <address>
+            Designed by Gemini<br>
+            2026 Semantic Labs
+        </address>
+        <p><small>&copy; 2026. This page uses 100% valid HTML5.</small></p>
+    </footer>
+
+</body>
+</html>
