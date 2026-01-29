@@ -3,147 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Ecosystem Semantic Demo</title>
-    <link rel="stylesheet" href="./dist/wabisabi.css"> </head>
+    <title>Total Semantic 2026 Master</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
 
-    <header>
-        <h1>Material 3.5 Semantic UI</h1>
-        <p>A full-spectrum demonstration of 2026 fluid typography, logical properties, and total HTML5 element coverage.</p>
-        <nav>
+<header>
+    <h1>The Kitchen Sink</h1>
+    <p>Demonstrating fluid typography, logical properties, and every valid HTML5 element in a native system aesthetic.</p>
+    <nav>
+        <menu>
+            <li><a href="#typography">Typography</a></li>
+            <li><a href="#forms">Interaction</a></li>
+            <li><a href="#data">Data</a></li>
+        </menu>
+    </nav>
+</header>
+
+<main>
+    <section>
+        <h2>01. Async States</h2>
+        <p>Accessible skeleton loader via <code>aria-busy="true"</code>:</p>
+        <div aria-busy="true" style="height: 80px; margin-block: 1rem;">Content is fetching...</div>
+    </section>
+
+    <article id="typography">
+        <h2>02. Text Semantics</h2>
+        <p>Paragraphs represent the core of reading. We support <mark>marking</mark>, <del>deletion</del>, and <ins>insertion</ins>. Chemical formulas like H<sub>2</sub>O and mathematical constants like πr<sup>2</sup> work natively.</p>
+        
+        <p>Quotes: <q>To be, or not to be</q> and blockquotes:</p>
+        <blockquote>
+            "Simplicity is the ultimate sophistication."
+            <cite>— Leonardo da Vinci</cite>
+        </blockquote>
+
+        <p>Abbreviations: <abbr title="World Wide Web">WWW</abbr>. References: <cite>HTML Living Standard</cite>. Definitions: <dfn>Semantic HTML</dfn> is the use of HTML markup to reinforce the meaning of information.</p>
+        
+        <p>Languages: <ruby>漢 <rt>かん</rt> 字 <rt>じ</rt></ruby> (Ruby) and <bdi>Isolation</bdi>.</p>
+
+        <h3>Technical Semantics</h3>
+        <p>The variable <var>x</var> is defined. Press <kbd>Ctrl</kbd> + <kbd>C</kbd> to copy. Output: <samp>Success</samp>.</p>
+        <pre><code>function init() {
+  console.log("Fluid Engine Active");
+}</code></pre>
+    </article>
+
+    <section id="forms">
+        <h2>03. Form Logic</h2>
+        <form action="#" method="get">
+            <fieldset>
+                <legend>Identity</legend>
+                <label for="usr">Username</label>
+                <input type="text" id="usr" placeholder="Enter name">
+                
+                <label for="opt">Framework</label>
+                <input list="browsers" id="opt">
+                <datalist id="browsers">
+                    <option value="Native Minimalist">
+                    <option value="Material 3">
+                </datalist>
+            </fieldset>
+
+            <fieldset>
+                <legend>Metrics</legend>
+                <label for="prog">Upload Level</label>
+                <progress id="prog" value="65" max="100"></progress>
+                
+                <label for="met">Disk Usage</label>
+                <meter id="met" value="0.8" min="0" max="1">80%</meter>
+            </fieldset>
+
             <menu>
-                <button type="button">Dashboard</button>
-                <button type="button">Settings</button>
-                <button type="button" disabled>Admin Only</button>
+                <button type="submit">Submit Data</button>
+                <button type="reset">Clear All</button>
+                <button type="button" disabled>Locked</button>
             </menu>
-        </nav>
-    </header>
+        </form>
+    </section>
 
-    <main>
-        <section>
-            <h2>Interactive Feedback</h2>
-            <p>Elements using <code>aria-busy="true"</code> automatically trigger the Google-style pulse loader.</p>
-            <div aria-busy="true" style="height: 100px; margin-bottom: 1rem;">
-                This content is loading...
+    <section id="data">
+        <h2>04. Complex Data</h2>
+        <table>
+            <caption>Device Support Table</caption>
+            <thead>
+                <tr>
+                    <th>OS</th>
+                    <th>Font Support</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>iOS/macOS</td>
+                    <td>San Francisco</td>
+                    <td><time datetime="2026-01-29">Active</time></td>
+                </tr>
+                <tr>
+                    <td>Android</td>
+                    <td>Roboto</td>
+                    <td>Active</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <details>
+            <summary>View Specification Details</summary>
+            <ul>
+                <li>Total elements covered: 100+</li>
+                <li>Responsive Logic: <code>clamp()</code> and Container Queries</li>
+                <li>A11y: WCAG 2.2 AAA Contrast</li>
+            </ul>
+        </details>
+    </section>
+
+    <section>
+        <h2>05. Media Figures</h2>
+        <figure>
+            <div style="background: var(--accent); aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center;">
+                <span>Native Media Placeholder</span>
             </div>
-            <button aria-busy="true">Loading Action</button>
-        </section>
+            <figcaption>Fig 1. Responsive media container with logical padding.</figcaption>
+        </figure>
+    </section>
+</main>
 
-        <article>
-            <h2>Typography & Text Semantics</h2>
-            <p>This paragraph contains <mark>marked text</mark>, <u>underlined text</u>, <strong>strong importance</strong>, and <em>emphasized stress</em>. We also support <abbr title="HyperText Markup Language">HTML</abbr> abbreviations and <q>inline quotations</q>.</p>
-            
-            <p>Technical content: <kbd>Ctrl</kbd> + <kbd>C</kbd> to copy. The variable <var>x</var> equals the <samp>output of the terminal</samp>. <code>function()</code> is a code snippet.</p>
-            
-            <blockquote>
-                "Design is not just what it looks like and feels like. Design is how it works."
-                <cite>— Steve Jobs</cite>
-            </blockquote>
-
-            <p>Internationalization: <ruby>漢 <rt>かん</rt> 字 <rt>じ</rt></ruby> (Ruby characters) and <bdi>Isolate Directional Text</bdi>.</p>
-        </article>
-
-        <section>
-            <h2>Accessible Inputs</h2>
-            <form action="#" method="post">
-                <fieldset>
-                    <legend>User Information</legend>
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" placeholder="Google User" required>
-                    
-                    <label for="color">Favorite Theme Color</label>
-                    <input type="color" id="color" value="#0b57d0">
-
-                    <label for="range">Volume Setting</label>
-                    <input type="range" id="range" min="0" max="100">
-
-                    <label for="choices">Framework Choice</label>
-                    <select id="choices">
-                        <option value="m3">Material 3.5</option>
-                        <option value="native">Native Browser</option>
-                    </select>
-
-                    <label for="msg">Message</label>
-                    <textarea id="msg" rows="3" placeholder="Type a message..."></textarea>
-                </fieldset>
-
-                <fieldset>
-                    <legend>System Status</legend>
-                    <label>Storage Used (Meter)</label>
-                    <meter min="0" max="100" low="30" high="80" optimum="20" value="75"></meter>
-                    
-                    <label>Upload Progress (Progress Bar)</label>
-                    <progress value="45" max="100"></progress>
-                </fieldset>
-
-                <menu>
-                    <button type="submit">Submit Product Data</button>
-                    <button type="reset">Clear Form</button>
-                </menu>
-            </form>
-        </section>
-
-        <section>
-            <h2>Complex Data</h2>
-            <table>
-                <caption>Weekly Usage Metrics</caption>
-                <thead>
-                    <tr>
-                        <th>Feature</th>
-                        <th>User Engagement</th>
-                        <th>Latency</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Semantic Logic</td>
-                        <td>High</td>
-                        <td><time datetime="PT0.2S">0.2s</time></td>
-                    </tr>
-                    <tr>
-                        <td>Fluid Clamping</td>
-                        <td>Moderate</td>
-                        <td><time datetime="PT0.5S">0.5s</time></td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td colspan="2">System Overall</td>
-                        <td>Optimal</td>
-                    </tr>
-                </tfoot>
-            </table>
-
-            <details>
-                <summary>View Technical Specifications</summary>
-                <ul>
-                    <li>Logical Properties: <code>margin-inline</code>, <code>padding-block</code></li>
-                    <li>WCAG Compliance: 2.2 Level AAA</li>
-                    <li>Viewport: Fluid <code>clamp()</code> scaling</li>
-                </ul>
-            </details>
-        </section>
-
-        <section>
-            <h2>Media & Graphics</h2>
-            <figure>
-                <div style="background: var(--m3-primary-container); height: 200px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center;">
-                    <span style="color: var(--m3-on-primary-container)">Placeholder for &lt;img&gt; or &lt;canvas&gt;</span>
-                </div>
-                <figcaption>Figure 1: The Google Material 3 color harmony in action.</figcaption>
-            </figure>
-            
-            <p>Supporting <small>Copyright &copy; 2026</small> and <sub>Subscript</sub>/<sup>Superscript</sup> content.</p>
-        </article>
-    </main>
-
-    <footer>
-        <p>Built with 100% Native Semantic HTML5.</p>
-        <address>
-            Google Design Labs<br>
-            Mountain View, CA
-        </address>
-    </footer>
+<footer>
+    <address>
+        2026 Semantic Labs<br>
+        Built for Performance and Privacy
+    </address>
+    <p><small>&copy; 2026. This page uses 100% standard-compliant code.</small></p>
+</footer>
 
 </body>
 </html>
